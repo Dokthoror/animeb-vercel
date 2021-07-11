@@ -14,6 +14,7 @@
           class="w-full h-full top-0 left-0"
           :src="getTrailerVideo"
           frameborder="0"
+          allowFullScreen
           v-if="site && id"
         ></iframe>
         <div
