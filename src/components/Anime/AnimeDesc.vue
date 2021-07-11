@@ -2,7 +2,7 @@
   <div class="min-h-screen" :style="getBackground">
     <div class="h-auto px-4 pt-28 pb-8 lg:flex lg:items-center lg:px-24">
       <img
-        class="hidden mr-4 shadow-2xl lg:block"
+        class="hidden mr-4 shadow-2xl max-w-md h-auto lg:block"
         :src="coverImage"
         :alt="enTitle ? enTitle : naTitle"
       />

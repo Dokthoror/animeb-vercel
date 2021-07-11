@@ -28,6 +28,7 @@ import Vue from "vue";
 import Loader from "../Loader.vue";
 import { Media as Popular } from "../../interfaces/popularAnime";
 import { Media as Trending } from "../../interfaces/trendingAnimes";
+
 export default Vue.extend({
   components: { Loader },
   data(): { category: string; media: Popular | Trending } {

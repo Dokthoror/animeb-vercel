@@ -7,6 +7,7 @@
 <script lang="ts">
 import Vue from "vue";
 import HomeAnime from "../../components/Home/HomeAnime.vue";
+
 export default Vue.extend({
   components: { HomeAnime },
   beforeMount() {

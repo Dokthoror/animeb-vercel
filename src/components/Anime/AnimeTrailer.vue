@@ -1,15 +1,13 @@
 <template>
   <div
-    class="py-4 px-4 bg-gray-900 min-h-1/2 lg:flex lg:items-center lg:justify-between lg:px-28 lg:py-8"
+    class="py-4 px-4 bg-gray-900 min-h-1/2 lg:flex lg:items-center lg:px-28 lg:py-8"
   >
-    <div
-      class="w-full lg:w-1/2 lg:h-3/4 lg:flex lg:flex-col lg:items-center lg:pr-6"
-    >
+    <div class="lg:w-1/2 lg:flex lg:flex-col lg:items-center lg:pr-6">
       <p class="text-white text-3xl font-semibold">
         {{ enTitle ? enTitle : naTitle }}'s trailer
       </p>
       <br />
-      <div class="h-full w-full flex justify-center aspect-w-16 aspect-h-9">
+      <div class="w-full flex justify-center aspect-w-16 aspect-h-9">
         <iframe
           class="w-full h-full top-0 left-0"
           :src="getTrailerVideo"
@@ -75,6 +73,7 @@
 
 <script lang="ts">
 import Vue from "vue";
+
 export default Vue.extend({
   props: {
     site: {

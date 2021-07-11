@@ -1,6 +1,6 @@
 <template>
   <div class="h-full">
-    <div v-if="media.title.native">
+    <div class="h-full" v-if="media.title.native">
       <anime-desc
         v-if="media.title.native"
         :enTitle="media.title.english"

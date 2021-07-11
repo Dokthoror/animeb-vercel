@@ -1,64 +1,64 @@
 export interface AnimeType {
-    data: Data | null;
-    errors: Error[] | undefined;
+  data: Data | null;
+  errors: Error[] | undefined;
 }
 
 export interface Data {
-    Media: Media;
+  Media: Media;
 }
 
 export interface Media {
-    title: Title;
-    description: string;
-    episodes: number;
-    trailer: Trailer;
-    bannerImage: string;
-    coverImage: CoverImage;
-    averageScore: number;
-    tags: Tag[];
-    studios: Studios;
+  title: Title;
+  description: string;
+  episodes: number;
+  trailer: Trailer;
+  bannerImage: string;
+  coverImage: CoverImage;
+  averageScore: number;
+  tags: Tag[];
+  studios: Studios;
 }
 
 export interface CoverImage {
-    extraLarge: string;
-    color: string;
+  extraLarge: string;
+  color: string;
 }
 
 export interface Studios {
-    edges: Edge[];
+  edges: Edge[];
 }
 
 export interface Edge {
-    node: Node;
+  node: Node;
 }
 
 export interface Node {
-    name: string;
+  name: string;
 }
 
 export interface Tag {
-    id: number;
-    name: string;
-    category: string;
+  id: number;
+  name: string;
+  category: string;
 }
 
 export interface Title {
-    english: string;
-    native: string;
+  english: string;
+  native: string;
 }
 
 export interface Trailer {
-    site: string;
-    id: string;
+  site: string;
+  id: string;
 }
 
 export interface Error {
-    message: string;
-    status: number;
-    locations: Location[];
+  message: string;
+  status: number;
+  locations: Location[];
 }
 
 export interface Location {
-    line: number;
-    column: number;
+  line: number;
+  column: number;
 }
