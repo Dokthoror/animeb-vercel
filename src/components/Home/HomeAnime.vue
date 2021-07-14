@@ -2,12 +2,12 @@
   <div class="min-h-screen lg:min-h-3/4 flex">
     <transition name="fade" mode="out-in">
       <div
-        class="flex-1"
+        class="flex-1 lg:flex lg:justify-center lg:flex-col"
         :style="getBackground"
         v-if="media.id > 0"
         key="homeAnime"
       >
-        <div class="z-40 pt-32 p-4 lg:pb-16 lg:pl-40">
+        <div class="z-40 pt-32 p-4 lg:pl-40 lg:pt-24">
           <p class="text-4xl font-extrabold">{{ category }} now</p>
           <p class="text-3xl font-bold">{{ media.title.english }}</p>
           <p class="text-3xl italic font-bold">{{ media.title.native }}</p>
