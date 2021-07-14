@@ -1,25 +1,32 @@
 <template>
   <div class="min-h-screen lg:min-h-3/4 flex">
-    <div class="flex-1" :style="getBackground" v-if="media.id > 0">
-      <div class="z-40 pt-32 p-4 lg:pb-16 lg:pl-40">
-        <p class="text-4xl font-extrabold">{{ category }} now</p>
-        <p class="text-3xl font-bold">{{ media.title.english }}</p>
-        <p class="text-3xl italic font-bold">{{ media.title.native }}</p>
-        <p class="text-xl lg:w-1/3" v-html="animeDesc"></p>
-        <div class="m-1">
-          <router-link
-            type="button"
-            class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 my-1 rounded"
-            :to="`/anime/${media.id}`"
-          >
-            More infos
-          </router-link>
+    <transition name="fade" mode="out-in">
+      <div
+        class="flex-1"
+        :style="getBackground"
+        v-if="media.id > 0"
+        key="homeAnime"
+      >
+        <div class="z-40 pt-32 p-4 lg:pb-16 lg:pl-40">
+          <p class="text-4xl font-extrabold">{{ category }} now</p>
+          <p class="text-3xl font-bold">{{ media.title.english }}</p>
+          <p class="text-3xl italic font-bold">{{ media.title.native }}</p>
+          <p class="text-xl lg:w-1/3" v-html="animeDesc"></p>
+          <div class="m-1">
+            <router-link
+              type="button"
+              class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 my-1 rounded"
+              :to="`/anime/${media.id}`"
+            >
+              More infos
+            </router-link>
+          </div>
         </div>
       </div>
-    </div>
-    <div v-else class="flex-1 flex justify-center items-center">
-      <loader></loader>
-    </div>
+      <div v-else class="flex-1 flex justify-center items-center" key="loader">
+        <loader />
+      </div>
+    </transition>
   </div>
 </template>
 

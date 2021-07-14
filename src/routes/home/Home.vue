@@ -1,6 +1,6 @@
 <template>
   <div class="h-full">
-    <home-anime></home-anime>
+    <home-anime />
   </div>
 </template>
 

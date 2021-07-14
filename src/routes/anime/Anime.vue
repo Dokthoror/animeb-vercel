@@ -1,28 +1,29 @@
 <template>
   <div class="h-full">
-    <div class="h-full" v-if="media.title.native">
-      <anime-desc
-        v-if="media.title.native"
-        :enTitle="media.title.english"
-        :naTitle="media.title.native"
-        :coverImage="media.coverImage.extraLarge"
-        :color="media.coverImage.color"
-        :episodes="media.episodes"
-        :desc="media.description"
-        :bannerImage="media.bannerImage"
-      ></anime-desc>
-      <anime-trailer
-        v-bind="media.trailer"
-        :enTitle="media.title.english"
-        :naTitle="media.title.native"
-        :tags="media.tags"
-        :studios="media.studios.edges"
-        :averageScore="media.averageScore"
-      ></anime-trailer>
-    </div>
-    <div v-else class="h-full flex justify-center items-center">
-      <loader></loader>
-    </div>
+    <transition name="fade" mode="out-in">
+      <div class="h-full" v-if="media.title.native" key="anime">
+        <anime-desc
+          :enTitle="media.title.english"
+          :naTitle="media.title.native"
+          :coverImage="media.coverImage.extraLarge"
+          :color="media.coverImage.color"
+          :episodes="media.episodes"
+          :desc="media.description"
+          :bannerImage="media.bannerImage"
+        />
+        <anime-trailer
+          v-bind="media.trailer"
+          :enTitle="media.title.english"
+          :naTitle="media.title.native"
+          :tags="media.tags"
+          :studios="media.studios.edges"
+          :averageScore="media.averageScore"
+        />
+      </div>
+      <div v-else class="h-full flex justify-center items-center" key="loader">
+        <loader />
+      </div>
+    </transition>
   </div>
 </template>
 
@@ -33,6 +34,7 @@ import Loader from "../../components/Loader.vue";
 import AnimeDesc from "../../components/Anime/AnimeDesc.vue";
 import AnimeTrailer from "../../components/Anime/AnimeTrailer.vue";
 import { Media } from "../../interfaces/anime";
+
 Vue.use(VueRouter);
 export default Vue.extend({
   components: { AnimeDesc, AnimeTrailer, Loader },

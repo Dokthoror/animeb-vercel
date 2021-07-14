@@ -1,7 +1,7 @@
 <template>
   <div class="h-full">
-    <nav-bar></nav-bar>
-    <router-view></router-view>
+    <nav-bar />
+    <router-view />
   </div>
 </template>
 
@@ -22,4 +22,21 @@ export default Vue.extend({
 });
 </script>
 
-<style></style>
+<style>
+.fade-enter-active {
+  animation: fade 1s;
+}
+
+.fade-leave-active {
+  animation: fade 0.5s reverse;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0%;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+</style>
