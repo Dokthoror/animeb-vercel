@@ -1,5 +1,5 @@
 <template>
-  <div class="h-full">
+  <div class="mi-h-in">
     <transition name="fade" mode="out-in">
       <div class="h-full" v-if="media.title.native" key="anime">
         <anime-desc
@@ -20,7 +20,11 @@
           :averageScore="media.averageScore"
         />
       </div>
-      <div v-else class="h-full flex justify-center items-center" key="loader">
+      <div
+        v-else
+        class="h-screen flex justify-center items-center"
+        key="loader"
+      >
         <loader />
       </div>
     </transition>

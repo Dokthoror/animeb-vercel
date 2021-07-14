@@ -1,6 +1,6 @@
 <template>
   <div
-    class="py-4 px-4 bg-gray-900 min-h-1/2 lg:flex lg:items-center lg:px-28 lg:py-8"
+    class="py-4 px-4 bg-gray-800 min-h-1/2 lg:flex lg:items-center lg:px-28 lg:py-8"
   >
     <div class="lg:w-1/2 lg:flex lg:flex-col lg:items-center lg:pr-6">
       <p class="text-white text-3xl font-semibold">

@@ -1,9 +1,5 @@
 import Router from "vue-router";
 
-const Home = () => import("./home/Home.vue");
-const Anime = () => import("./anime/Anime.vue");
-const NotFound = () => import("./notFound/NotFound.vue");
-
 export default new Router({
   mode: "history",
   routes: [
@@ -13,15 +9,15 @@ export default new Router({
     },
     {
       path: "/home",
-      component: Home,
+      component: () => import("./home/Home.vue"),
     },
     {
       path: "/anime/:id",
-      component: Anime,
+      component: () => import("./anime/Anime.vue"),
     },
     {
       path: "*",
-      component: NotFound,
+      component: () => import("./notFound/NotFound.vue"),
     },
   ],
 });

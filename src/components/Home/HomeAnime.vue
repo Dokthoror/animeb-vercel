@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen lg:min-h-3/4 flex">
+  <div class="min-h-screen lg:min-h-screen-3/4 flex">
     <transition name="fade" mode="out-in">
       <div
         class="flex-1 lg:flex lg:justify-center lg:flex-col"

@@ -1,7 +1,8 @@
 <template>
-  <div class="h-full bg-gray-200">
+  <div class="min-h-screen bg-gray-200">
     <nav-bar />
     <router-view />
+    <custom-footer />
   </div>
 </template>
 
@@ -9,9 +10,10 @@
 import Vue from "vue";
 import "tailwindcss/tailwind.css";
 import NavBar from "./components/NavBar.vue";
+import CustomFooter from "./components/CustomFooter.vue";
 
 export default Vue.extend({
-  components: { NavBar },
+  components: { NavBar, CustomFooter },
 });
 </script>
 
