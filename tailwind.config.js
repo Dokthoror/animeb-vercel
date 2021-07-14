@@ -14,6 +14,9 @@ module.exports = {
         "screen-3/4": "75vh",
         in: "inherit",
       }),
+      padding: (theme) => ({
+        "2/3": "calc(2*100%/3)",
+      }),
     },
   },
   variants: {

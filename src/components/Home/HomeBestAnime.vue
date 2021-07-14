@@ -1,17 +1,17 @@
 <template>
-  <div class="min-h-screen lg:min-h-screen-3/4 flex">
+  <div class="min-h-screen lg:min-h-screen-3/4 lg:text-right flex">
     <transition name="fade" mode="out-in">
       <div
         class="flex-1 lg:flex lg:justify-center lg:flex-col"
         :style="getBackground"
         v-if="media.id > 0"
-        key="homeAnime"
+        key="homeBestAnime"
       >
-        <div class="z-40 pt-32 p-4 lg:pl-40 lg:pt-24">
+        <div class="z-40 pt-8 p-4 lg:pr-40 lg:pt-24">
           <p class="text-4xl font-extrabold">{{ category }}</p>
           <p class="text-3xl font-bold">{{ media.title.english }}</p>
           <p class="text-3xl italic font-bold">{{ media.title.native }}</p>
-          <p class="text-xl lg:pr-2/3" v-html="animeDesc"></p>
+          <p class="text-xl lg:pl-2/3" v-html="animeDesc"></p>
           <div class="m-1">
             <router-link
               type="button"
@@ -33,14 +33,13 @@
 <script lang="ts">
 import Vue from "vue";
 import Loader from "../Loader.vue";
-import { Media as Popular } from "../../interfaces/popularAnime";
-import { Media as Trending } from "../../interfaces/trendingAnimes";
+import { Media as Best } from "../../interfaces/bestAnime";
 
 export default Vue.extend({
   components: { Loader },
-  data(): { category: string; media: Popular | Trending } {
+  data(): { category: string; media: Best } {
     return {
-      category: "",
+      category: "One of the top 100",
       media: {
         title: {
           english: "",
@@ -69,28 +68,14 @@ export default Vue.extend({
       let direction: string = "to bottom";
       let image: string | null = this.media.coverImage.extraLarge;
       if (window.screen.width >= 1024) {
-        direction = "to right";
+        direction = "to left";
         image = this.media.bannerImage;
       }
       return `background: linear-gradient(${direction}, ${color} 25%, transparent), url(${image}) no-repeat center/cover;`;
     },
   },
   async beforeMount() {
-    const queryTypes: Array<{ category: string; endpoint: string }> = [
-      {
-        category: "Most popular",
-        endpoint: "popular",
-      },
-      {
-        category: "Trending now",
-        endpoint: "trending",
-      },
-    ];
-    const query = queryTypes[Math.floor(Math.random() * queryTypes.length)];
-    this.category = query.category;
-    const apiAnswer: Popular | Trending = await (
-      await fetch(`/api/${query.endpoint}`)
-    ).json();
+    const apiAnswer: Best = await (await fetch(`/api/best`)).json();
     this.media = apiAnswer;
   },
 });
