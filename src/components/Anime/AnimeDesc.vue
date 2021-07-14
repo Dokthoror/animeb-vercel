@@ -21,9 +21,8 @@
 
 <script lang="ts">
 import Vue from "vue";
-import Loader from "../Loader.vue";
+
 export default Vue.extend({
-  components: { Loader },
   props: {
     enTitle: {
       type: String,
