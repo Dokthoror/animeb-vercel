@@ -1,5 +1,5 @@
 <template>
-  <div class="h-full">
+  <div class="h-full bg-gray-200">
     <nav-bar />
     <router-view />
   </div>
@@ -12,13 +12,6 @@ import NavBar from "./components/NavBar.vue";
 
 export default Vue.extend({
   components: { NavBar },
-  beforeMount() {
-    fetch("/api/hello?name=reader").then((res) => {
-      res.text().then((val) => {
-        console.log(val);
-      });
-    });
-  },
 });
 </script>
 
